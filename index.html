@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>م مواقع تواصل ريما 🦋</title>
+    <title>موقع تواصل ريما 🦋</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;700;800&display=swap');
 
         * {
             box-sizing: border-box;
@@ -30,6 +30,76 @@
             position: relative;
         }
 
+        /* شاشة الترحيب الراقية باسم Rema */
+        .welcome-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #2a1f3d, #4a2c5e);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+        }
+
+        .welcome-box {
+            text-align: center;
+            padding: 40px 30px;
+            width: min(340px, 85vw);
+            animation: fadeInScale 1s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            position: relative;
+        }
+
+        .welcome-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 72px;
+            color: #f6d68a;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 20px rgba(246, 214, 138, 0.6);
+            letter-spacing: 2px;
+        }
+
+        .welcome-sub {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0 0 35px 0;
+            letter-spacing: 1px;
+        }
+
+        .enter-site-btn {
+            background: transparent;
+            color: #f6d68a;
+            border: 1.5px solid #f6d68a;
+            padding: 12px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(246, 214, 138, 0.1);
+        }
+
+        .enter-site-btn:hover {
+            background: #f6d68a;
+            color: #2a1f3d;
+            box-shadow: 0 0 25px rgba(246, 214, 138, 0.4);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         .particles {
             position: absolute;
             inset: 0;
@@ -49,15 +119,8 @@
                 transform: translateY(110vh) scale(0.6) rotate(0deg);
                 opacity: 0;
             }
-
-            10% {
-                opacity: 0.9;
-            }
-
-            90% {
-                opacity: 0.9;
-            }
-
+            10% { opacity: 0.9; }
+            90% { opacity: 0.9; }
             100% {
                 transform: translateY(-10vh) scale(1.1) rotate(360deg);
                 opacity: 0;
@@ -99,14 +162,13 @@
                 opacity: 0;
                 transform: scale(0.6) translateY(50px);
             }
-
             to {
                 opacity: 1;
                 transform: scale(1) translateY(0);
             }
         }
 
-        /* الأجنحة الأصلية */
+        /* الأجنحة المحدثة */
         .wings {
             position: absolute;
             top: -6%;
@@ -124,10 +186,7 @@
         .wing {
             width: 50%;
             max-width: 520px;
-            mix-blend-mode: screen;
-            filter: brightness(1.3) contrast(1.3);
-            -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 52%, #000 35%, transparent 68%);
-            mask-image: radial-gradient(ellipse 60% 70% at 50% 52%, #000 35%, transparent 68%);
+            filter: brightness(1.1) contrast(1.1);
             transform-origin: bottom center;
         }
 
@@ -143,27 +202,13 @@
         }
 
         @keyframes flapR {
-
-            0%,
-            100% {
-                transform: rotate(4deg) translateY(0) scaleY(1);
-            }
-
-            50% {
-                transform: rotate(-12deg) translateY(-16px) scaleY(0.93);
-            }
+            0%, 100% { transform: rotate(4deg) translateY(0) scaleY(1); }
+            50% { transform: rotate(-12deg) translateY(-16px) scaleY(0.93); }
         }
 
         @keyframes flapL {
-
-            0%,
-            100% {
-                transform: scaleX(-1) rotate(4deg) translateY(0) scaleY(1);
-            }
-
-            50% {
-                transform: scaleX(-1) rotate(-12deg) translateY(-16px) scaleY(0.93);
-            }
+            0%, 100% { transform: scaleX(-1) rotate(4deg) translateY(0) scaleY(1); }
+            50% { transform: scaleX(-1) rotate(-12deg) translateY(-16px) scaleY(0.93); }
         }
 
         /* البطاقة */
@@ -190,19 +235,8 @@
             border-radius: 4px;
         }
 
-        .card::before {
-            top: 10px;
-            right: 10px;
-            border-left: none;
-            border-bottom: none;
-        }
-
-        .card::after {
-            bottom: 10px;
-            left: 10px;
-            border-right: none;
-            border-top: none;
-        }
+        .card::before { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+        .card::after { bottom: 10px; left: 10px; border-right: none; border-top: none; }
 
         .seal {
             position: absolute;
@@ -227,15 +261,8 @@
         }
 
         @keyframes beat {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.18);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.18); }
         }
 
         .cn {
@@ -292,12 +319,22 @@
 </head>
 
 <body>
+    <!-- شاشة الترحيب -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-box">
+            <div class="welcome-name">Rema</div>
+            <div class="welcome-sub">مرحباً بك في عالمي 🦋</div>
+            <button class="enter-site-btn" id="enterBtn">دخول الموقع</button>
+        </div>
+    </div>
+
     <div class="particles" id="particles" aria-hidden="true"></div>
     <h2 class="title">مواقع تواصل ريما 🦋💗</h2>
 
     <div class="stage">
         <div class="wrap">
             <div class="wings">
+                <!-- تم تغيير الامتداد إلى wing.png هنا -->
                 <img class="wing wingLeft" src="wing.png" alt="" aria-hidden="true" />
                 <img class="wing wingRight" src="wing.png" alt="" aria-hidden="true" />
             </div>
@@ -308,8 +345,7 @@
                 <div class="hr" aria-hidden="true">🤍🌸🤍</div>
                 <p class="cn">ريما 🌸</p>
                 <div class="links">
-                    <a class="btn" href="https://www.instagram.com/rema_dokhi" target="_blank"
-                        rel="noopener noreferrer">
+                    <a class="btn" href="https://www.instagram.com/rema_dokhi" target="_blank" rel="noopener noreferrer">
                         <svg viewBox="0 0 24 24" width="32" height="32">
                             <defs>
                                 <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -329,9 +365,7 @@
                     <a class="btn" href="https://www.snapchat.com/t/TofHTsry" target="_blank" rel="noopener noreferrer">
                         <svg viewBox="0 0 24 24" width="32" height="32">
                             <rect x="2" y="2" width="20" height="20" rx="6" fill="#FFFC00" />
-                            <path
-                                d="M12 5.2c1.9 0 3.1 1.4 3.1 3.4 0 .5 0 1 .1 1.4.3.2.7.2 1 .1.5-.1.8.5.4.8-.3.2-.8.4-1.1.6-.2.4.6 1.6 1.9 2 .4.1.3.6 0 .8-.4.2-1 .2-1.3.5-.1.3.1.7-.3.8-.4.1-1-.3-1.7-.1-.5.2-.9.9-2 .9s-1.5-.7-2-.9c-.7-.2-1.3.2-1.7.1-.4-.1-.2-.5-.3-.8-.3-.3-.9-.3-1.3-.5-.3-.2-.4-.7 0-.8 1.3-.4 2.1-1.6 1.9-2-.3-.2-.8-.4-1.1-.6-.4-.3-.1-.9.4-.8.3.1.7.1 1-.1.1-.4.1-.9.1-1.4 0-2 1.2-3.4 3.1-3.4z"
-                                fill="#fff" stroke="#000" stroke-width="0.4" />
+                            <path d="M12 5.2c1.9 0 3.1 1.4 3.1 3.4 0 .5 0 1 .1 1.4.3.2.7.2 1 .1.5-.1.8.5.4.8-.3.2-.8.4-1.1.6-.2.4.6 1.6 1.9 2 .4.1.3.6 0 .8-.4.2-1 .2-1.3.5-.1.3.1.7-.3.8-.4.1-1-.3-1.7-.1-.5.2-.9.9-2 .9s-1.5-.7-2-.9c-.7-.2-1.3.2-1.7.1-.4-.1-.2-.5-.3-.8-.3-.3-.9-.3-1.3-.5-.3-.2-.4-.7 0-.8 1.3-.4 2.1-1.6 1.9-2-.3-.2-.8-.4-1.1-.6-.4-.3-.1-.9.4-.8.3.1.7.1 1-.1.1-.4.1-.9.1-1.4 0-2 1.2-3.4 3.1-3.4z" fill="#fff" stroke="#000" stroke-width="0.4" />
                         </svg>
                         <span>سناب شات</span>
                     </a>
@@ -341,11 +375,10 @@
         </div>
     </div>
 
-    <!-- تفعيل التشغيل التلقائي المباشر بالصوت -->
-    <audio id="song" src="song.mp3" loop autoplay preload="auto"></audio>
+    <audio id="song" src="song.mp3" loop preload="auto"></audio>
 
     <script>
-        // الفراشات والورود
+        // الفراشات والورود الخلفية
         const EMOJIS = ['🦋', '🌸', '✨', '💗', '🌷', '💖', '🦋', '🌸'];
         const c = document.getElementById('particles');
         for (let i = 0; i < 18; i++) {
@@ -359,12 +392,20 @@
         }
 
         const song = document.getElementById('song');
+        const welcomeOverlay = document.getElementById('welcomeOverlay');
+        const enterBtn = document.getElementById('enterBtn');
         const muteBtn = document.getElementById('muteBtn');
+        
         song.volume = 0.85;
 
-        // أمر تشغيل إضافي فور تحميل السكريبت بالكامل للتأكيد
-        song.play().catch((err) => {
-            console.log("تم حظر التشغيل التلقائي بواسطة سياسة المتصفح: ", err);
+        // عند الضغط على زر دخول الموقع
+        enterBtn.addEventListener('click', () => {
+            song.play().catch((err) => { console.log("خطأ بالتشغيل:", err); });
+            
+            welcomeOverlay.style.opacity = '0';
+            setTimeout(() => {
+                welcomeOverlay.style.display = 'none';
+            }, 600);
         });
 
         // زر كتم / تشغيل الصوت
