@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>مواقع تواصل ريما 🦋</title>
+    <title>م مواقع تواصل ريما 🦋</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
 
@@ -26,9 +26,7 @@
             justify-content: center;
             padding: 24px;
             overflow-x: hidden;
-            /* منع التمرير الأفقي المزعج على الهواتف */
             overflow-y: auto;
-            /* تفعيل التمرير العمودي لكي تظهر الصفحة كاملة عند السحب */
             position: relative;
         }
 
@@ -108,7 +106,7 @@
             }
         }
 
-        /* الأجنحة - عادت كما كانت تماماً في الكود الأصلي */
+        /* الأجنحة الأصلية */
         .wings {
             position: absolute;
             top: -6%;
@@ -300,7 +298,6 @@
     <div class="stage">
         <div class="wrap">
             <div class="wings">
-                <!-- تم استخدام wing.jpg ليطابق الملف الفعلي المرفق لديك -->
                 <img class="wing wingLeft" src="wing.png" alt="" aria-hidden="true" />
                 <img class="wing wingRight" src="wing.png" alt="" aria-hidden="true" />
             </div>
@@ -344,7 +341,8 @@
         </div>
     </div>
 
-    <audio id="song" src="song.mp3" loop preload="auto"></audio>
+    <!-- تفعيل التشغيل التلقائي المباشر بالصوت -->
+    <audio id="song" src="song.mp3" loop autoplay preload="auto"></audio>
 
     <script>
         // الفراشات والورود
@@ -359,11 +357,17 @@
             s.style.animationDelay = (Math.random() * 10) + 's';
             c.appendChild(s);
         }
-        // الموسيقى
+
         const song = document.getElementById('song');
-        song.volume = 0.85;
-        document.addEventListener('click', () => { song.play().catch(() => { }); }, { once: true });
         const muteBtn = document.getElementById('muteBtn');
+        song.volume = 0.85;
+
+        // أمر تشغيل إضافي فور تحميل السكريبت بالكامل للتأكيد
+        song.play().catch((err) => {
+            console.log("تم حظر التشغيل التلقائي بواسطة سياسة المتصفح: ", err);
+        });
+
+        // زر كتم / تشغيل الصوت
         muteBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             song.muted = !song.muted;
